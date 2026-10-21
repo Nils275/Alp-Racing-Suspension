@@ -1,0 +1,155 @@
+/* ===== Bouton « Notice » + fenêtre de sélection =====
+   Couleurs identiques au chatbot (variables --arc-*, avec valeurs de secours). */
+
+/* Bouton fixe en bas à gauche */
+.notice-btn {
+  position: fixed;
+  left: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 9990;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.2rem;
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--arc-accent-text, #fff);
+  background: var(--arc-accent, #237a4b);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.notice-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+.notice-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 34px rgba(0, 0, 0, .45); }
+.notice-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* Masqué quand un menu mobile est ouvert */
+body:has(#mobile-menu.is-open) .notice-btn,
+body:has(#rg-mob.is-open) .notice-btn { display: none; }
+
+/* Fenêtre */
+.ntc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10002;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  background: rgba(8, 10, 12, .65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.ntc-overlay[hidden] { display: none; }
+html.ntc-open { overflow: hidden; }
+
+.ntc-dialog,
+.ntc-dialog * { box-sizing: border-box; font-family: var(--arc-font, "Manrope", system-ui, sans-serif); text-align: left; }
+
+.ntc-dialog {
+  width: 420px;
+  max-width: 100%;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  color: var(--arc-text, #eceae6);
+  background: var(--arc-bg, #16181b);
+  border: 1px solid var(--arc-border, #343840);
+  border-radius: var(--arc-radius, 14px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .5);
+  animation: ntc-open .22s ease-out;
+}
+
+.ntc-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--arc-surface, #22252a);
+  border-bottom: 3px solid var(--arc-accent, #237a4b);
+}
+.ntc-head strong { display: block; font-size: 16px; }
+.ntc-head span { display: block; margin-top: 2px; font-size: 12.5px; color: var(--arc-muted, #9aa0a8); }
+.ntc-close {
+  border: 0;
+  background: transparent;
+  color: var(--arc-text, #eceae6);
+  font-size: 26px;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.ntc-close:hover { background: var(--arc-border, #343840); }
+
+.ntc-body { padding: 18px 16px 20px; display: flex; flex-direction: column; gap: 8px; }
+.ntc-body label { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--arc-muted, #9aa0a8); margin-top: 6px; }
+.ntc-body select {
+  width: 100%;
+  padding: 11px 12px;
+  font-size: 15px;
+  color: var(--arc-text, #eceae6);
+  background: var(--arc-surface, #22252a);
+  border: 1px solid var(--arc-border, #343840);
+  border-radius: 10px;
+}
+.ntc-body select:disabled { opacity: .5; cursor: not-allowed; }
+
+.ntc-result:empty { display: none; }
+.ntc-result { margin-top: 10px; padding: 14px; background: var(--arc-surface, #22252a); border: 1px solid var(--arc-border, #343840); border-radius: 10px; }
+.ntc-name { margin: 0 0 10px; font-size: 14px; line-height: 1.4; }
+.ntc-soon { margin: 0; font-size: 14px; line-height: 1.5; color: var(--arc-muted, #9aa0a8); }
+.ntc-dl {
+  display: inline-block;
+  padding: 11px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--arc-accent-text, #fff);
+  background: var(--arc-accent, #237a4b);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.ntc-dl:hover { filter: brightness(1.12); }
+
+.ntc-help { margin: 10px 0 0; font-size: 13px; color: var(--arc-muted, #9aa0a8); }
+.ntc-help a { color: var(--arc-text, #eceae6); text-decoration: underline; text-underline-offset: 3px; }
+
+.ntc-close:focus-visible,
+.ntc-body select:focus-visible,
+.ntc-dl:focus-visible,
+.ntc-help a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+@keyframes ntc-open { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (max-width: 480px) {
+  .ntc-overlay { align-items: flex-end; padding: 0; }
+  .ntc-dialog { width: 100%; border-radius: var(--arc-radius, 14px) var(--arc-radius, 14px) 0 0; }
+  .notice-btn { left: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ntc-dialog { animation: none; }
+  .notice-btn { transition: none; }
+}
+.ntc-sep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0 2px;
+  color: var(--arc-muted, #9aa0a8);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.ntc-sep::before,
+.ntc-sep::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--arc-border, #343840);
+}
+/* Bouton Notice masqué pour le moment (supprimer cette règle pour le réactiver) */
+.notice-btn { display: none !important; }

@@ -1,0 +1,180 @@
+/* ===== Chatbot Alp Racing — styles =====
+   Modifiez uniquement les variables ci-dessous pour adapter les couleurs. */
+:root {
+  --arc-accent: #237a4b;        /* vert ALP Racing (contraste AA avec le blanc) */
+  --arc-accent-text: #ffffff;   /* texte sur la couleur d'accent */
+  --arc-bg: #16181b;
+  --arc-surface: #22252a;
+  --arc-border: #343840;
+  --arc-text: #eceae6;
+  --arc-muted: #9aa0a8;
+  --arc-radius: 14px;
+  --arc-font: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.arc-toggle,
+.arc-panel,
+.arc-panel * { box-sizing: border-box; font-family: var(--arc-font); }
+
+/* Bouton flottant */
+.arc-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 10000;
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--arc-accent);
+  color: var(--arc-accent-text);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+  transition: transform .2s ease;
+}
+.arc-toggle:hover { transform: scale(1.06); }
+.arc-toggle svg { width: 26px; height: 26px; }
+
+/* Fenêtre */
+.arc-panel {
+  position: fixed;
+  right: 20px;
+  bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+  z-index: 10001;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  height: 540px;
+  max-height: calc(100dvh - 120px);
+  display: flex;
+  flex-direction: column;
+  background: var(--arc-bg);
+  color: var(--arc-text);
+  border: 1px solid var(--arc-border);
+  border-radius: var(--arc-radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .5);
+  overflow: hidden;
+  animation: arc-open .22s ease-out;
+}
+.arc-panel[hidden] { display: none; }
+
+.arc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--arc-surface);
+  border-bottom: 3px solid var(--arc-accent);
+}
+.arc-head strong { display: block; font-size: 15px; }
+.arc-head span { display: block; font-size: 12px; color: var(--arc-muted); margin-top: 2px; }
+.arc-close {
+  border: 0;
+  background: transparent;
+  color: var(--arc-text);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.arc-close:hover { background: var(--arc-border); }
+
+/* Messages */
+.arc-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+.arc-msg { max-width: 86%; font-size: 14.5px; line-height: 1.5; }
+.arc-msg p { margin: 0; padding: 10px 13px; border-radius: var(--arc-radius); white-space: pre-line; }
+.arc-bot { align-self: flex-start; }
+.arc-bot p { background: var(--arc-surface); border-bottom-left-radius: 4px; }
+.arc-user { align-self: flex-end; }
+.arc-user p { background: var(--arc-accent); color: var(--arc-accent-text); border-bottom-right-radius: 4px; }
+.arc-msg a { color: var(--arc-text); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Indicateur de saisie */
+.arc-typing { align-self: flex-start; display: flex; gap: 4px; padding: 12px 14px; background: var(--arc-surface); border-radius: var(--arc-radius); }
+.arc-typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--arc-muted); animation: arc-dot 1s infinite ease-in-out; }
+.arc-typing i:nth-child(2) { animation-delay: .15s; }
+.arc-typing i:nth-child(3) { animation-delay: .3s; }
+
+/* Boutons de réponse rapide */
+.arc-options { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 16px 12px; }
+.arc-options:empty { display: none; }
+.arc-opt {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  color: var(--arc-text);
+  background: transparent;
+  border: 1px solid var(--arc-accent);
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+.arc-opt:hover { background: var(--arc-accent); color: var(--arc-accent-text); }
+.arc-opt--link { background: var(--arc-accent); color: var(--arc-accent-text); }
+
+/* Saisie libre */
+.arc-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--arc-border); background: var(--arc-surface); }
+.arc-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--arc-text);
+  background: var(--arc-bg);
+  border: 1px solid var(--arc-border);
+  border-radius: 10px;
+}
+.arc-form input::placeholder { color: var(--arc-muted); }
+.arc-form button {
+  width: 42px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--arc-accent);
+  color: var(--arc-accent-text);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Accessibilité : focus visible */
+.arc-toggle:focus-visible,
+.arc-close:focus-visible,
+.arc-opt:focus-visible,
+.arc-form input:focus-visible,
+.arc-form button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* Mobile : plein écran */
+@media (max-width: 480px) {
+  .arc-panel { right: 0; bottom: 0; width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; border-radius: 0; }
+  .arc-toggle { right: 16px; }
+}
+
+@keyframes arc-open { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes arc-dot { 0%, 80%, 100% { opacity: .3; } 40% { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-panel, .arc-typing i { animation: none; }
+  .arc-toggle, .arc-opt { transition: none; }
+  .arc-log { scroll-behavior: auto; }
+}
+
+/* Boutons fixes du site : le chat occupe le coin bas-droit */
+@media (max-width: 480px) {
+  html.arc-open { overflow: hidden; }
+  .arc-toggle { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* Le bouton de chat se masque quand le menu mobile est ouvert */
+body:has(#mobile-menu.is-open) .arc-toggle,
+body:has(#rg-mob.is-open) .arc-toggle { display: none; }

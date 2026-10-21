@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ALP Racing Suspension — Dépositaire officiel Reiger en France. Vente, révision et mise au point des amortisseurs Reiger : C3 R5, Yaris GR, Quad TRX 450." />
+  <title>Gamme Reiger — ALP Racing Suspension</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet"/>  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="reiger.css" />
+  <link rel="stylesheet" href="chatbot.css" />
+  <link rel="stylesheet" href="notice.css" />
+  <link rel="stylesheet" href="cookies.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header id="rg-header">
+    <div class="rg-hdr container">
+
+      <div class="hdr-brands">
+        <a href="index.html" class="hdr-logo hdr-logo--alp" aria-label="ALP Racing Suspension — retour à l'accueil">
+          <img src="image/logoalp.png" alt="ALP Racing Suspension" height="34"
+               onerror="this.parentElement.classList.add('is-missing')" />
+          <span class="logo-fb" aria-hidden="true">
+            <b class="fb-main">ALP</b>
+            <span class="fb-sub"><span>Racing</span><span>Suspension</span></span>
+          </span>
+        </a>
+        <span class="hdr-brands-sep" aria-hidden="true"></span>
+        <a href="#rg-header" class="hdr-logo hdr-logo--reiger" aria-label="Gamme Reiger" aria-current="page">
+          <img src="image/logoreiger.png" alt="Reiger Suspension" height="34"
+               onerror="this.parentElement.classList.add('is-missing')" />
+          <span class="logo-fb" aria-hidden="true"><b class="fb-main">REIGER</b></span>
+        </a>
+      </div>
+
+      <nav class="rg-nav" aria-label="Navigation">
+        <ul>
+          <li><a href="#rg-intro">Présentation</a></li>
+          <li><a href="#catalogue">Catalogue</a></li>
+          <li><a href="#rg-tt">Tout-terrain &amp; Raid</a></li>
+          <li><a href="#rg-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="rg-burger" class="rg-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="rg-mob">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </header>
+
+  <!-- Menu mobile : hors du header (un parent avec backdrop-filter casserait position:fixed) -->
+    <nav id="rg-mob" class="rg-mob" aria-label="Menu mobile" aria-hidden="true">
+      <button id="rg-mob-close" class="rg-mob-close" type="button" aria-label="Fermer le menu">✕</button>
+      <ul>
+        <li><a href="#rg-intro">Présentation</a></li>
+        <li><a href="#catalogue">Catalogue</a></li>
+        <li><a href="#rg-tt">Tout-terrain &amp; Raid</a></li>
+        <li><a href="#rg-contact">Contact</a></li>
+        <li><a href="index.html" class="rg-mob-back">← ALP Racing Suspension</a></li>
+      </ul>
+    </nav>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="rg-hero" aria-label="Gamme Reiger — ALP Racing">
+      <div class="rg-hero-bg">
+        <video class="rg-hero-vid" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="video/reig2.mp4" type="video/mp4" />
+        </video>
+        <div class="rg-hero-grad" aria-hidden="true"></div>
+      </div>
+
+      <div class="rg-hero-body container">
+        <div class="rg-hero-tag">
+          <span class="rg-tag-dot" aria-hidden="true"></span>
+          Dépositaire officiel Reiger en France
+        </div>
+
+        <h1 class="rg-h1">
+          <span class="rg-h1-sm">Gamme</span>
+          <span class="rg-h1-lg">REIGER</span>
+          <span class="rg-h1-acc"><i>by ALP Racing.</i></span>
+        </h1>
+
+        <p class="rg-hero-sub">
+          Amortisseurs Reiger — vente, révision, entretien
+          et développement. Auto, moto, quad.
+          Uniquement pour la compétition.
+        </p>
+
+        <div class="rg-hero-btns">
+          <a href="#demande-devis" class="rg-btn rg-btn--primary">Demander un devis</a>
+          <a href="#rg-intro"   class="rg-btn rg-btn--ghost">Voir la gamme</a>
+        </div>
+      </div>
+
+      <!-- Ticker -->
+      <div class="rg-ticker" aria-hidden="true">
+        <div class="rg-ticker-t">
+          <span>Dépositaire officiel France</span><b>✦</b>
+          <span>Vente Reiger</span><b>✦</b>
+          <span>Révision &amp; entretien</span><b>✦</b>
+          <span>Citroën C3 R5</span><b>✦</b>
+          <span>Toyota Yaris GR</span><b>✦</b>
+          <span>Quad TRX 450</span><b>✦</b>
+          <span>Auto · Moto · Quad</span><b>✦</b>
+          <span>Compétition uniquement</span><b>✦</b>
+          <span>Dépositaire officiel France</span><b>✦</b>
+          <span>Vente Reiger</span><b>✦</b>
+          <span>Révision &amp; entretien</span><b>✦</b>
+          <span>Citroën C3 R5</span><b>✦</b>
+          <span>Toyota Yaris GR</span><b>✦</b>
+          <span>Quad TRX 450</span><b>✦</b>
+          <span>Auto · Moto · Quad</span><b>✦</b>
+          <span>Compétition uniquement</span><b>✦</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PRÉSENTATION ═══ -->
+    <section id="rg-intro" class="rg-sec rg-sec--white" aria-labelledby="rg-intro-h2">
+      <div class="container">
+
+        <div class="rg-intro-grid">
+
+          <div class="rg-intro-left">
+            <p class="rg-label">Notre rôle</p>
+            <h2 id="rg-intro-h2" class="rg-h2">
+              <span>Dépositaire</span>
+              <span>officiel</span>
+              <span class="rg-h2-acc"><i>en France.</i></span>
+            </h2>
+            <div class="rg-intro-badge">
+              <span class="rib-flag" aria-hidden="true">🇳🇱</span>
+              <div>
+                <strong>Reiger Suspension</strong>
+                <span>Hengelo, Pays-Bas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rg-intro-right">
+            <p class="rg-intro-lead">
+              ALP Racing Suspension est le dépositaire officiel
+              des produits Reiger en France.
+            </p>
+            <p>
+              Nous proposons la vente de toute la gamme Reiger,
+              ainsi que la révision, l'entretien, le développement
+              et la mise au point des amortisseurs.
+              Des produits renommés, une haute qualité de finition,
+              pour équiper votre auto, moto ou quad
+              en usage compétitif.
+            </p>
+            <p>
+              Vous cherchez un amortisseur Reiger spécifique,
+              des pièces de rechange, ou vous avez besoin d'une révision ?
+              Contactez-nous directement —
+              on gère la commande, le suivi et la livraison.
+            </p>
+
+            <div class="rg-intro-actions">
+              <a href="https://reigersuspension.com/" class="rg-btn rg-btn--outline"
+                 target="_blank" rel="noopener" aria-label="Site officiel Reiger Suspension">
+                reigersuspension.com ↗
+              </a>
+              <a href="#rg-contact" class="rg-btn rg-btn--primary">
+                Nous contacter
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3 prestations -->
+        <div class="rg-prestations">
+          <div class="rg-prest">
+            <div class="rg-prest-num" aria-hidden="true">01</div>
+            <h3>Vente</h3>
+            <p>Toute la gamme Reiger disponible à la commande —
+               amortisseurs, pièces et consommables d'origine.</p>
+          </div>
+          <div class="rg-prest">
+            <div class="rg-prest-num" aria-hidden="true">02</div>
+            <h3>Révision &amp; entretien</h3>
+            <p>Démontage complet, remplacement joints et clapeteries,
+               vidange, passage au banc. Toutes références Reiger.</p>
+          </div>
+          <div class="rg-prest">
+            <div class="rg-prest-num" aria-hidden="true">03</div>
+            <h3>Développement &amp; mise au point</h3>
+            <p>Setup, réglages, développement sur mesure.
+               On s'appuie sur les données techniques
+               et le retour du pilote.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- ═══ GAMME PAR DISCIPLINE ═══ -->
+<section class="rgx-sec" id="rgx-disciplines" aria-labelledby="rgx-title">
+  <div class="rgx-container">
+
+    <header class="rgx-head">
+      <span class="rgx-eyebrow">La gamme Reiger</span>
+      <h2 id="rgx-title">Une solution pour chaque discipline</h2>
+    </header>
+
+    <!-- 1. Rallye : image à gauche, texte à droite -->
+    <article class="rgx-row">
+      <div class="rgx-media">
+        <img src="image/bg.jpg" alt="Voiture de rallye équipée d'amortisseurs Reiger" loading="lazy">
+      </div>
+      <div class="rgx-text">
+        <span class="rgx-num">01</span>
+        <h3>Rallye</h3>
+        <p>Asphalte, terre ou neige : le rallye exige des amortisseurs précis, constants et réglables. La gamme Reiger répond à ces contraintes, de la configuration polyvalente aux références dédiées WRC.</p>
+        <p>ALP Racing vous conseille sur la référence adaptée à votre véhicule, assure la vente, la révision et le réglage.</p>
+        <button type="button" class="rgx-btn" data-filter="Rallye">Voir les références rallye →</button>
+      </div>
+    </article>
+
+    <!-- 2. Rallye-cross : texte à gauche, image à droite -->
+    <article class="rgx-row rgx-row--reverse">
+      <div class="rgx-media">
+        <img src="image/DAR.png" alt="Voiture de rallye-cross équipée d'amortisseurs Reiger" loading="lazy" autoplay muted loop>
+      </div>
+      <div class="rgx-text">
+        <span class="rgx-num">02</span>
+        <h3>Rallye-cross</h3>
+        <p>Départs explosifs, sauts, changements de surface : le rallye-cross sollicite fortement la suspension sur des épreuves très courtes. Il faut un amortissement capable d'encaisser et de rester constant.</p>
+        <p>Nous étudions avec vous les réglages et la configuration selon votre voiture et votre championnat.</p>
+        <button type="button" class="rgx-btn" data-filter="Autocross">Voir les références →</button>
+      </div>
+    </article>
+
+    <!-- 3. Autocross : image à gauche, texte à droite -->
+    <article class="rgx-row">
+      <div class="rgx-media">
+        <img src="https://images.openai.com/static-rsc-4/Ead0pYFvqiuah31CurYXo2TIS7FS4-vyBDVHDsFiNc29diBRUADrtNARPyHJrabr97RmjJVF-ZRuNjY7NyI2C2dyFrzJKVu7IgxgYZyW9Dq6xMZecCHAODV4hF90Onf5W4-fzUA9KtBNYU4a6wz7p7Y3Te7SSXbfe9smfPM0TLKVfx9AqzQ3EoKHpWixcTl2?purpose=fullsize" alt="Buggy d'autocross équipé d'amortisseurs Reiger" loading="lazy">
+      </div>
+      <div class="rgx-text">
+        <span class="rgx-num">03</span>
+        <h3>Autocross</h3>
+        <p>Terrain irrégulier, sauts et réceptions : l'autocross demande une suspension robuste, facile à régler et fiable course après course.</p>
+        <p>La Reiger 460 est notamment référencée pour cet usage. Contactez-nous pour confirmer la configuration de votre buggy ou de votre voiture.</p>
+        <button type="button" class="rgx-btn" data-filter="Autocross">Voir les références autocross →</button>
+      </div>
+    </article>
+
+  </div>
+</section>
+    <section class="regie-catalogue" id="catalogue">
+  <div class="regie-container">
+
+    <!-- En-tête -->
+    <header class="regie-header">
+      <span class="regie-eyebrow">ALP RACING SUSPENSION</span>
+      <h1>Catalogue suspensions Reiger</h1>
+      <p>Découvrez notre sélection de systèmes de suspension Reiger.
+         Consultez les caractéristiques et transmettez-nous votre demande
+         pour obtenir une solution adaptée à votre véhicule.</p>
+    </header>
+
+    <!-- Layout sidebar + catalogue -->
+    <div class="regie-layout">
+
+      <!-- Filtres -->
+      <aside class="regie-sidebar">
+        <div class="regie-filter-heading">
+          <h2>Filtrer</h2>
+          <button type="button" id="resetFilters" class="regie-reset">
+            Réinitialiser
+          </button>
+        </div>
+
+        <label for="filterModel">Référence</label>
+        <select id="filterModel">
+          <option value="">Toutes</option>
+          <option value="360">360</option>
+          <option value="460">460</option>
+          <option value="550">550</option>
+          <option value="620R">620R</option>
+          <option value="680R">680R</option>
+          <option value="5046">5046</option>
+          <option value="5746">5746</option>
+        </select>
+
+        <label for="filterUse">Discipline</label>
+        <select id="filterUse">
+  <option value="">Toutes</option>
+  <option value="Quad">Quad</option>
+  <option value="Autocross">Autocross</option>
+  <option value="Rallye">Rallye</option>
+  <option value="Rallye raid">Rallye raid</option>
+</select>
+
+        <div class="regie-filter-note">
+          <span class="regie-status-dot"></span>
+          <p>Configuration et compatibilité à confirmer selon votre véhicule.</p>
+        </div>
+      </aside>
+
+      <!-- Résultats -->
+      <div class="regie-results">
+        <div class="regie-results-top">
+          <p><strong id="productCount">7</strong> références</p>
+          <span>Produits de compétition</span>
+        </div>
+
+        <div class="regie-product-grid" id="productGrid"></div>
+
+        <div class="regie-empty" id="emptyState" hidden>
+          <h3>Aucun produit trouvé</h3>
+          <p>Modifiez vos filtres pour afficher d'autres références.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Formulaire devis -->
+    <section class="regie-quote" id="demande-devis">
+      <div class="regie-quote-intro">
+        <span class="regie-eyebrow">VOTRE PROJET</span>
+        <h2>Parlons de votre suspension</h2>
+        <p>Indiquez votre véhicule et votre discipline.
+           Nous étudierons votre demande et vous répondrons sous 24h.</p>
+      </div>
+
+      <div class="hs-form-frame" data-ck-label="Formulaire de demande de devis" data-region="eu1" data-form-id="031c5247-89d6-488f-8983-f2d6617a4f42" data-portal-id="149530320"></div>
+    </section>
+
+  </div>
+
+  <!-- Modale détails produit -->
+  <dialog class="regie-modal" id="productModal">
+    <button type="button" class="regie-modal-close" id="closeModal"
+            aria-label="Fermer la fiche produit">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+</section>
+<!-- ═══ TOUT-TERRAIN & RAID ═══ -->
+<section id="rg-tt" class="rg-sec rg-sec--off" aria-labelledby="rg-tt-h2">
+  <div class="container">
+
+    <div class="rg-tt-grid">
+
+      <!-- Image pleine hauteur -->
+      <div class="rg-tt-img">
+        <img
+          src="image/tt.png"
+          alt="Buggy tout-terrain Reiger en action sur terrain accidenté — raid et cross-country"
+          loading="lazy"
+        />
+        <div class="rg-tt-img-badge">
+          <strong></strong>
+          <span><br></span>
+        </div>
+      </div>
+
+      <!-- Contenu -->
+      <div class="rg-tt-content">
+
+        <div class="rg-tt-head">
+          <p class="rg-label">Discipline phare Reiger</p>
+          <h2 id="rg-tt-h2" class="rg-h2">
+            <span>Tout-terrain</span>
+            <span class="rg-h2-acc"><i>& Raid.</i></span>
+          </h2>
+        </div>
+
+        <p class="rg-tt-lead">
+          Avec 12 victoires au Dakar et de nombreux titres en cross-country,
+          Reiger est LA référence mondiale de l'amortisseur de raid.
+          ALP Racing maîtrise ces produits et intervient
+          sur tous les véhicules engagés en tout-terrain.
+        </p>
+
+        <p class="rg-tt-body">
+          Du buggy au 4x4, du SSV au quad — nos amortisseurs Reiger
+          sont conçus pour encaisser des milliers de kilomètres
+          dans des conditions extrêmes, sans compromis sur la fiabilité.
+          On s'occupe de la vente, de la révision et du setup.
+        </p>
+
+        <!-- Liste disciplines -->
+        <div class="rg-tt-list">
+          <div class="rg-tt-item">
+            <div class="rg-tt-dot" aria-hidden="true"></div>
+            <span>Dakar &amp; cross-country</span>
+          </div>
+          <div class="rg-tt-item">
+            <div class="rg-tt-dot" aria-hidden="true"></div>
+            <span>Kart-Cross &amp; Sprint-Car</span>
+          </div>
+          <div class="rg-tt-item">
+            <div class="rg-tt-dot" aria-hidden="true"></div>
+            <span>Trial &amp; enduro 4x4</span>
+          </div>
+          <div class="rg-tt-item">
+            <div class="rg-tt-dot" aria-hidden="true"></div>
+            <span>Buggy off-road</span>
+          </div>
+          <div class="rg-tt-item">
+            <div class="rg-tt-dot" aria-hidden="true"></div>
+            <span>SSV / UTV compétition</span>
+          </div>
+          <div class="rg-tt-item">
+            <div class="rg-tt-dot" aria-hidden="true"></div>
+            <span>Quad TRX compétition</span>
+          </div>
+        </div>
+        
+
+        <a href="#demande-devis" class="rg-btn rg-btn--primary">
+          Demander un devis →
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+   
+
+    <!-- ═══ CONTACT ═══ -->
+    <section id="rg-contact" class="rg-sec rg-sec--dark" aria-labelledby="rg-ct-h2">
+      <div class="container">
+        <div class="rg-ct-grid">
+
+          <div class="rg-ct-left">
+            <p class="rg-label rg-label--lt">Newsletter</p>
+            <h2 id="rg-ct-h2" class="rg-h2 rg-h2--lt">
+              <span>Restez</span>
+              <span>dans la</span>
+              <span class="rg-h2-acc"><i>boucle.</i></span>
+            </h2>
+            <p class="rg-ct-sub">
+              Nouveautés Reiger, conseils techniques et coulisses de l'atelier —
+              par email, pas souvent, mais utile.
+            </p>
+            <div class="rg-ct-infos">
+              <div class="rg-ct-info">
+                <span>Email</span>
+                <a href="mailto:info@alp-racing.fr">info@alp-racing.fr</a>
+              </div>
+              <div class="rg-ct-info">
+                <span>Adresse</span>
+                <p>15 Route de la Salle<br>74960 Cran-Gevrier (Annecy)</p>
+              </div>
+            </div>
+            <a href="index.html" class="rg-back-main">
+              ← Retour au site principal
+            </a>
+          </div>
+
+          <div class="rg-ct-right">
+            <div class="hs-form-frame" data-ck-label="Inscription à la newsletter" data-region="eu1" data-form-id="f9cf5c9b-3bdc-49a8-84d4-3be13ee4cede" data-portal-id="149530320"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="rg-footer">
+    <div class="container">
+      <div class="rg-footer-row">
+        <div>
+          <div class="ft-brand">
+      <a href="#hero" class="ft-logo-link" aria-label="ALP Racing Suspension — Accueil">
+        <img
+          src="image/logoreiger.png"
+          alt="ALP Racing Suspension"
+          class="ft-logo-img"
+          loading="lazy"
+        />
+      </a>
+      <p>Spécialiste suspension compétition.<br>
+         Circuit · Rallye · Tout-terrain.<br>
+         Atelier à Cran-Gevrier, Haute-Savoie.</p>
+    </div>
+          <p>Dépositaire officiel Reiger Suspension en France</p>
+        </div>
+        <div class="rg-footer-links">
+          <a href="index.html">← Site ALP Racing</a>
+          <a href="https://reigersuspension.com" target="_blank" rel="noopener">Reiger officiel ↗</a>
+          <a href="#rg-contact">Contact</a>
+          <a href="#">Mentions légales</a>
+        </div>
+      </div>
+      <div class="rg-footer-bottom">
+        <p>© <span id="rg-year"></span> ALP Racing Suspension · 15 Route de la Salle · 74960 Cran-Gevrier</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="notice-btn" class="notice-btn" type="button" aria-haspopup="dialog" aria-controls="notice-modal">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+    <span>Notice</span>
+  </button>
+
+  <button class="arc-toggle" id="arc-toggle" type="button"
+          aria-label="Ouvrir le chat" aria-expanded="false" aria-controls="arc-panel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-5.3A8.5 8.5 0 1 1 21 11.5z"/>
+    </svg>
+  </button>
+
+  <section class="arc-panel" id="arc-panel" role="dialog" aria-label="Assistant Alp Racing" hidden>
+    <header class="arc-head">
+      <div>
+        <strong>Assistant Alp Racing</strong>
+        <span>Réponses automatiques</span>
+      </div>
+      <button class="arc-close" id="arc-close" type="button" aria-label="Fermer le chat">&times;</button>
+    </header>
+
+    <div class="arc-log" id="arc-log" role="log" aria-live="polite"></div>
+    <div class="arc-options" id="arc-options"></div>
+
+    <form class="arc-form" id="arc-form" autocomplete="off">
+      <input id="arc-input" type="text" placeholder="Écrivez votre question…" aria-label="Votre message" maxlength="200">
+      <button type="submit" aria-label="Envoyer">&#10148;</button>
+    </form>
+  </section>
+
+  <button id="top-btn" class="top-btn" type="button" aria-label="Retour en haut de page" hidden>↑</button>
+
+  <script src="reiger.js" defer></script>
+  <script src="chatbot.js" defer></script>
+  <script src="notice.js" defer></script>
+  <script src="cookies.js" defer></script>
+</body>
+</html>

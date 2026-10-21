@@ -1,0 +1,94 @@
+/* ALP Racing Suspension : section amortisseur interactif. Tout est préfixé alp-shock- */
+.alp-shock{
+  --alp-shock-bg:#060f05; --alp-shock-surface:#0b1d0c; --alp-shock-line:#1b401d;
+  --alp-shock-blue:#2dff37; --alp-shock-text:#e8edf6; --alp-shock-muted:#97a3b8;
+  background:radial-gradient(ellipse at 50% 0%,#0c3014 0%,var(--alp-shock-bg) 60%);
+  color:var(--alp-shock-text); padding:clamp(48px,8vw,110px) 20px;
+  font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.6;
+  overflow-x:hidden; box-sizing:border-box;
+}
+.alp-shock *,.alp-shock *::before,.alp-shock *::after{box-sizing:border-box}
+.alp-shock-inner{max-width:1280px;margin:0 auto}
+.alp-shock-head{max-width:720px;margin-bottom:clamp(28px,4vw,56px)}
+.alp-shock-eyebrow{color:var(--alp-shock-blue);text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;font-weight:600;margin:0 0 12px}
+.alp-shock h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;margin:0 0 16px;font-weight:700}
+.alp-shock-intro{color:var(--alp-shock-muted);margin:0}
+
+.alp-shock-layout{display:grid;grid-template-columns:230px minmax(0,1fr) 360px;gap:32px;align-items:start}
+.alp-shock-nav{grid-column:1;grid-row:1}
+.alp-shock-figure{grid-column:2;grid-row:1;margin:0;text-align:center}
+.alp-shock-panel{grid-column:3;grid-row:1}
+
+/* Menu */
+.alp-shock-menu{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.alp-shock-item{width:100%;display:flex;align-items:center;gap:12px;text-align:left;min-height:48px;
+  background:transparent;color:var(--alp-shock-muted);border:1px solid var(--alp-shock-line);border-radius:6px;
+  padding:10px 14px;font:inherit;cursor:pointer;transition:all .25s ease}
+.alp-shock-item span.n{font-variant-numeric:tabular-nums;color:var(--alp-shock-blue);font-size:.8rem}
+.alp-shock-item:hover{color:var(--alp-shock-text);border-color:var(--alp-shock-blue)}
+.alp-shock-item[aria-current="true"]{color:#fff;border-color:var(--alp-shock-blue);background:rgba(45,255,55,.12);box-shadow:0 0 18px rgba(45,255,55,.2)}
+
+/* Illustration */
+.alp-shock-svg{width:100%;max-width:520px;height:auto;max-height:78vh;display:inline-block;overflow:visible}
+.alp-shock-shape{fill:#102b16;stroke:#4a7856;stroke-width:2;transition:stroke .25s,fill .25s,filter .25s}
+.alp-shock-detail{fill:none;stroke:#4a7856;stroke-width:2}
+.alp-shock-spring{fill:none;stroke:#4a7856;stroke-width:5;stroke-linejoin:round;stroke-linecap:round;transition:stroke .25s,filter .25s}
+.alp-shock-hose{fill:none;stroke:#4a7856;stroke-width:6;stroke-linecap:round;transition:stroke .25s}
+.alp-shock-part{cursor:pointer}
+.alp-shock-part:hover .alp-shock-shape,.alp-shock-part:hover .alp-shock-spring{stroke:#8dffa0}
+.alp-shock-part.is-active .alp-shock-shape{stroke:var(--alp-shock-blue);fill:#0f3a1a}
+.alp-shock-part.is-active .alp-shock-spring,.alp-shock-part.is-active .alp-shock-hose{stroke:var(--alp-shock-blue)}
+.alp-shock-part.is-active .alp-shock-detail{stroke:var(--alp-shock-blue)}
+.alp-shock-part.is-active{filter:drop-shadow(0 0 6px rgba(45, 255, 97, 0.55))}
+.alp-shock-leader{stroke:var(--alp-shock-blue);stroke-width:1;opacity:.45;transition:opacity .25s}
+.alp-shock-marker{cursor:pointer;outline:none}
+.alp-shock-marker circle{fill:var(--alp-shock-bg);stroke:var(--alp-shock-blue);stroke-width:1.5;transition:fill .25s}
+.alp-shock-marker text{fill:var(--alp-shock-text);font-size:13px;font-weight:600;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.alp-shock-marker.is-active circle{fill:var(--alp-shock-blue)}
+.alp-shock-marker.is-active+ .alp-shock-leader,.alp-shock-leader.is-active{opacity:1}
+.alp-shock-marker:focus-visible circle{stroke:#fff;stroke-width:3}
+.alp-shock-caption{color:var(--alp-shock-muted);font-size:.8rem;margin-top:8px}
+
+/* Panneau */
+.alp-shock-panel{background:var(--alp-shock-surface);border:1px solid var(--alp-shock-line);border-radius:10px;padding:28px}
+.alp-shock-counter{color:var(--alp-shock-blue);font-variant-numeric:tabular-nums;letter-spacing:.1em;margin:0 0 8px;font-size:.85rem}
+.alp-shock-panel h3{font-size:1.5rem;margin:0 0 8px}
+.alp-shock-panel h4{color:var(--alp-shock-blue);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;margin:20px 0 6px}
+.alp-shock-panel p{margin:0;color:var(--alp-shock-muted)}
+.alp-shock-panel .alp-shock-desc{color:var(--alp-shock-text)}
+.alp-shock-photo{margin:20px 0 0}
+.alp-shock-photo img{width:100%;height:auto;border-radius:6px;border:1px solid var(--alp-shock-line);display:block}
+.alp-shock-retain{margin-top:22px;padding:14px 16px;border-left:3px solid var(--alp-shock-blue);background:rgba(45,255,55,.08);display:flex;flex-direction:column;gap:4px}
+.alp-shock-retain strong{color:var(--alp-shock-blue);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem}
+.alp-shock-controls{display:flex;gap:12px;margin-top:24px}
+.alp-shock-btn{flex:1;min-height:48px;background:transparent;color:var(--alp-shock-text);border:1px solid var(--alp-shock-blue);border-radius:6px;font:inherit;cursor:pointer;transition:background .25s}
+.alp-shock-btn:hover{background:rgba(45,255,55,.18)}
+.alp-shock-panel.is-fading>*{opacity:0}
+.alp-shock-panel>*{transition:opacity .25s ease}
+
+/* Bandeau */
+.alp-shock-strip{list-style:none;margin:clamp(36px,5vw,72px) 0 0;padding:28px 0 0;border-top:1px solid var(--alp-shock-line);display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.alp-shock-strip strong{display:block;color:var(--alp-shock-blue);text-transform:uppercase;letter-spacing:.15em;font-size:.85rem;margin-bottom:6px}
+.alp-shock-strip span{color:var(--alp-shock-muted)}
+
+/* Focus */
+.alp-shock button:focus-visible,.alp-shock-part:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* Tablette */
+@media (max-width:1100px){
+  .alp-shock-layout{grid-template-columns:minmax(0,1fr) 340px;gap:24px}
+  .alp-shock-nav{grid-column:1/-1;grid-row:2}
+  .alp-shock-figure{grid-column:1;grid-row:1}.alp-shock-panel{grid-column:2;grid-row:1}
+  .alp-shock-menu{flex-direction:row;flex-wrap:wrap}.alp-shock-item{width:auto}
+}
+/* Mobile : titre, illustration, menu, panneau */
+@media (max-width:760px){
+  .alp-shock{padding:48px 16px}
+  .alp-shock-layout{grid-template-columns:minmax(0,1fr)}
+  .alp-shock-figure,.alp-shock-nav,.alp-shock-panel{grid-column:1}
+  .alp-shock-figure{grid-row:1}.alp-shock-nav{grid-row:2}.alp-shock-panel{grid-row:3;padding:20px}
+  .alp-shock-menu{display:grid;grid-template-columns:1fr 1fr}.alp-shock-item{font-size:.9rem}
+  .alp-shock-svg{max-height:none}
+  .alp-shock-strip{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.alp-shock *{transition:none!important;animation:none!important}}
